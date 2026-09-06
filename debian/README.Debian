@@ -1,0 +1,14 @@
+python3-tensorflow for Debian
+================================
+
+Repackages the official PyPI wheel for tensorflow 2.21.0 (CPU build),
+matching the build environment's Python version. ~570MB installed.
+
+Requires the 'backports' Aptly component enabled for python3-protobuf
+(>= 6.31), since Debian's archive python3-protobuf (3.21.x) cannot
+satisfy TensorFlow's requirement.
+
+Packaged for the invokeai-mastodon project's local NSFW image
+classification (via opennsfw2's tf-keras backend).
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 06 Sep 2026 14:45:54 +0200

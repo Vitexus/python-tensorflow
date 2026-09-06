@@ -1,0 +1,7 @@
+python-tensorflow (2.21.0-1~vitex1) unstable; urgency=medium
+
+  * Initial Debian packaging: repackages the official PyPI wheel for
+    tensorflow 2.21.0 (CPU build). Packaged for the invokeai-mastodon
+    project's local NSFW image classification.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 06 Sep 2026 14:45:54 +0200

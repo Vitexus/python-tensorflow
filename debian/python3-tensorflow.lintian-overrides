@@ -1,0 +1,7 @@
+# This package repackages the official prebuilt upstream PyPI wheel
+# (Bazel-built, ~570MB). TensorFlow's own build embeds/statically links
+# several common libraries (zlib, libpng, libjpeg, libjsoncpp, curl) into
+# its compiled objects. Unbundling them would require a full source
+# rebuild via Bazel, which is out of scope for this packaging pipeline
+# (Debian's own archive doesn't carry TensorFlow for the same reason).
+python3-tensorflow: embedded-library *

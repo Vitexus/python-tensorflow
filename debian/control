@@ -1,0 +1,52 @@
+Source: python-tensorflow
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ python3-all,
+ python3-pip,
+Standards-Version: 4.7.0
+Homepage: https://github.com/tensorflow/tensorflow
+Vcs-Git: https://github.com/Vitexus/python-tensorflow.git
+Vcs-Browser: https://github.com/Vitexus/python-tensorflow
+Rules-Requires-Root: no
+
+Package: python3-tensorflow
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+ python3-absl-py,
+ python3-astunparse,
+ python3-flatbuffers,
+ python3-gast,
+ python3-google-pasta,
+ python3-grpcio,
+ python3-h5py,
+ python3-keras,
+ python3-libclang,
+ python3-ml-dtypes,
+ python3-numpy,
+ python3-opt-einsum,
+ python3-packaging,
+ python3-protobuf (>= 6.31~),
+ python3-requests,
+ python3-setuptools,
+ python3-six,
+ python3-termcolor,
+ python3-typing-extensions,
+ python3-wrapt,
+Description: Machine learning platform (CPU build)
+ TensorFlow is an end-to-end open source machine learning platform. This
+ is the CPU-only build (no CUDA/GPU support).
+ .
+ This package repackages the official prebuilt PyPI wheel (~570MB;
+ TensorFlow's own Bazel-based build is far outside the scope of a simple
+ Debian packaging pipeline - Debian's own archive doesn't carry
+ TensorFlow for this reason either). Packaged for the invokeai-mastodon
+ project's local NSFW image classification (via opennsfw2's tf-keras
+ backend), and requires the 'backports' component enabled for a
+ sufficiently new python3-protobuf.
