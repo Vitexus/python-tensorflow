@@ -6,6 +6,7 @@ Build-Depends:
  debhelper-compat (= 13),
  dh-python,
  python3-all,
+ python3-numpy-dev,
  python3-pip,
 Standards-Version: 4.7.0
 Homepage: https://github.com/tensorflow/tensorflow
