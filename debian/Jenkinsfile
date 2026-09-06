@@ -8,7 +8,10 @@ String[] distributions = [
 			// 'debian:forky', // Disabled: Forky is still unstable/research-only.
 			//                 // The full Debian package ecosystem is not yet available for Forky.
 			//                 // Re-enable once the stack builds cleanly for Forky.
-			'ubuntu:jammy',
+			// 'ubuntu:jammy', // Disabled: depends on python3-keras, which
+			//                 // isn't built for jammy (its setuptools 59.6.0
+			//                 // is below the >=61.0 keras's pyproject.toml
+			//                 // needs - see python-keras's Jenkinsfile).
 			'ubuntu:noble',
 			// 'ubuntu:resolute', // Disabled: ships Python 3.14, for which
 			//                    // upstream TensorFlow publishes no PyPI wheel
