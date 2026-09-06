@@ -20,7 +20,7 @@ Depends:
  ${misc:Depends},
  ${python3:Depends},
  ${shlibs:Depends},
- python3-absl-py,
+ python3-absl,
  python3-astunparse,
  python3-flatbuffers,
  python3-gast,
