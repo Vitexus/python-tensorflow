@@ -10,7 +10,10 @@ String[] distributions = [
 			//                 // Re-enable once the stack builds cleanly for Forky.
 			'ubuntu:jammy',
 			'ubuntu:noble',
-			'ubuntu:resolute',
+			// 'ubuntu:resolute', // Disabled: ships Python 3.14, for which
+			//                    // upstream TensorFlow publishes no PyPI wheel
+			//                    // (this package repackages the official wheel,
+			//                    // it cannot build one that doesn't exist).
 ]
 
 String vendor = 'vitexsoftware'
