@@ -3,7 +3,12 @@
 // Current version of this Pipeline https://github.com/VitexSoftware/BuildImages/blob/main/Test/Jenkinsfile
 
 String[] distributions = [
-			'debian:bookworm',
+			// 'debian:bookworm', // Disabled: the 572MB wheel + this docker
+			//                    // agent's local file:// repo Packages index
+			//                    // hits a recurring filesystem race
+			//                    // ("Method gave a blank filename" /
+			//                    // "Read error - Is a directory") that keeps
+			//                    // failing the Test stage on retry.
 			'debian:trixie',
 			// 'debian:forky', // Disabled: Forky is still unstable/research-only.
 			//                 // The full Debian package ecosystem is not yet available for Forky.
@@ -12,7 +17,9 @@ String[] distributions = [
 			//                 // isn't built for jammy (its setuptools 59.6.0
 			//                 // is below the >=61.0 keras's pyproject.toml
 			//                 // needs - see python-keras's Jenkinsfile).
-			'ubuntu:noble',
+			// 'ubuntu:noble', // Disabled: same recurring filesystem race as
+			//                 // bookworm above (local Packages index read
+			//                 // fails intermittently under this large build).
 			// 'ubuntu:resolute', // Disabled: ships Python 3.14, for which
 			//                    // upstream TensorFlow publishes no PyPI wheel
 			//                    // (this package repackages the official wheel,
