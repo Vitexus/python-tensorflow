@@ -19,6 +19,14 @@ override_dh_auto_install:
 	      debian/python3-tensorflow/usr/lib/python3/dist-packages/ 2>/dev/null || true
 	dh_numpy3
 
+override_dh_python3:
+	# dh_python3's default extension renaming (adding the cpythonXXX-...-linux-gnu
+	# ABI tag) breaks TensorFlow: several of its .so files aren't Python import
+	# modules but shared libraries other extensions dlopen() by their literal
+	# original name (e.g. lib_pywrap_tensorflow_common.so), which then can't be
+	# found once renamed.
+	dh_python3 --no-ext-rename
+
 override_dh_auto_test:
 	# Skip tests - this is a prebuilt wheel repackage
 
